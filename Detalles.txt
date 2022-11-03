@@ -1,0 +1,33 @@
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Detalles de Software:                                                                                                                                                                      |    
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Nombre:    Asistencia_diaria                                                                                                                                                               |
+|Detalles:  La aplicación fue desarrollada para asisitir en el diario de trabajo. Cuenta con cuatro partes                                                                                  |
+|               *   Inicio: (el cual se puede obiar, pero permite elegir la herramienta para utilizar) que es basicamente una plantilla con el selector de aplicacion.                      |
+|               *   Buscador: Es un Scrip que simplifica la busqueda de equipamiento dentro de la planilla de "Equipos Electronicos"                                                        |
+|               *   Modificar: Sirve para modificar,el valor buscado previamente en el "Buscador", en la planilla original                                                                  |
+|               *   Diario: Simplifica las tareas diarias, ya que dispone de un calendario pre-armado y que podemos modificar/agregar tareas en forma manual                                |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Detalles de funcionamiento:                                                                                                                                                               |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Se inicia la aplicación por medio de "Inicio.py", donde se selecciona la app a utilizar. "Buscador.py" o "Diario.py"                                                                      |
+| Dependiendo de las tareas a realizar y el soft que se utilice, tendran distintas caracteristicas y funcionamientos                                                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+
+
+
+
+
+
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Detalles del funcionamiento del calendario                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Dejo los primeros 5 renglones para definir las tareas habituales de las semanas (Porterias y molinetes). Luego defino las tareas restantes en los siguientes renglones teniendo en cuenta |
+| el orden en que se planeo oportunamente.                                                                                                                                                  |
+| Al hacer esto tube que modificar la programación, ya que al tener los servidores colocados en las columnas "I","J","K" y "L" me generan conflicto.                                        |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Reparo esta falla mencionada, modificando el seteo del Excel en la Tabla "Calendario". La nueva distribución, me permite moverme en mejor forma y con un crongrama mas facil de leer ya   |
+|que tengo dividido las tareas que se repiten todas las semana a las que van variando de acuerdo al mes.                                                                                    | 
+| Sigo trabajando con las tareas que se cargan en forma manual a la Tabla "Tareas". Aun no puedo hacer que se guarden correctamente lo cargado en la aplicacion, pero ya puedo navegar las  |
+|precargadas. Esto pensando en ponerles un "ID" para poder hacer un seguimiento mas controlado                                                                                              |

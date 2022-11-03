@@ -1,0 +1,215 @@
+2022-08-24 14:04:18.062220 => pabloSe Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 3
+ 	*Comedor 3
+ 	*Training Center
+ 	*GPS- Warehouse
+
+Se agregan palabras para poder ver como se comporta el programa al pasar este string al .txt
+
+****************************************************************************************************
+2022-08-24 16:13:14.345931 => pablo 
+
+****************************************************************************************************
+2022-08-25 00:00:05.504578 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Porteria 4
+ 	*Porteria 5
+ 	*Mezzanine 
+
+****************************************************************************************************
+2022-08-25 00:03:51.207038 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 4Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:04:58.926722 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 4
+ 	*Porteria 5
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:05:20.259883 => pablo 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:06:57.322944 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 4
+ 	*Porteria 5
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:09:27.487614 => pablo 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:09:27.487614 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 4
+ 	*Porteria 5
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:09:27.487614 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 4
+ 	*Porteria 5
+ Se imprime informe Conexion remota con: cmd /k "mstsc -v ZACOMPORT5PRD:4489
+
+****************************************************************************************************
+2022-08-25 00:10:30.991319 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras TermicasConexion remota con: cmd /k "mstsc -v ZACOMPORT4PRD:4489
+
+****************************************************************************************************
+2022-08-25 00:11:47.350346 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Porteria 4
+ 	*Porteria 5
+ Conexion remota con: cmd /k "mstsc -v ZACOMPORT4PRD:4489
+
+****************************************************************************************************
+2022-08-25 00:13:18.141955 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 5
+ Conexion remota con: ZACOMMEZZANINEPRD
+
+****************************************************************************************************
+2022-08-25 00:14:36.876742 => pablo 
+ Conexion remota con: ZACOMPORT4PRD
+
+****************************************************************************************************
+2022-08-25 00:14:36.876742 => pablo 
+ Conexion remota con: ZACOMPORT4PRD
+ Conexion remota con: ZACOMPORT5PRD
+
+****************************************************************************************************
+2022-08-25 00:14:36.876742 => pablo 
+ Conexion remota con: ZACOMPORT4PRD
+ Conexion remota con: ZACOMPORT5PRD
+ Conexion remota con: ZACOMMEZZANINEPRD
+
+****************************************************************************************************
+2022-08-25 00:14:36.876742 => pablo 
+ Conexion remota con: ZACOMPORT4PRD
+ Conexion remota con: ZACOMPORT5PRD
+ Conexion remota con: ZACOMMEZZANINEPRD
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:18:10.914245 => pablo Se Realiza Mantenimiento de: 
+ 	*Molinetes
+ 	*Cámaras Termicas
+ 	*Porteria 4
+ 	*Porteria 5
+	* ZACOMPORT4PRD
+	* ZACOMPORT5PRD
+	* ZACOMMEZZANINEPRD
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:19:15.352565 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 4
+ 	* Porteria 5
+	* ZACOMPORT4PRD
+	* ZACOMMEZZANINEPRD
+	* ZACOMPORT5PRD
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 00:25:07.985933 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 4
+ 	* Porteria 5
+	* ZACOMPORT4PRD
+	* ZACOMPORT5PRD
+	* ZACOMMEZZANINEPRD
+ Se imprime informe 
+
+****************************************************************************************************
+2022-08-25 13:44:21.513052 => pablo 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-09-13 16:22:35.584075 => pablo 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-17 11:07:16.047482 => pablo 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-17 11:07:16.047482 => pablo 
+ Se imprime informe 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-18 11:32:43.926900 => pablo 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-18 11:32:43.926900 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 2
+ 	* Frame
+ 	* Mezzanine 
+ 	* -
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-18 11:48:12.391164 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 2
+ 	* Bumper 
+ 	* Canopy Sur
+ 	* Repuestos
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-18 11:48:12.391164 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 2
+ 	* Frame
+ 	* Mezzanine 
+ 	* -
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-18 11:48:12.391164 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 2
+ 	* Frame
+ 	* Mezzanine 
+ 	* -
+ Se imprime informe 
+ Se imprime informe 
+
+****************************************************************************************************
+2022-10-18 11:48:12.391164 => pablo Se Realiza Mantenimiento de: 
+ 	* Molinetes
+ 	* Cámaras Termicas
+ 	* Porteria 2
+ 	* Frame
+ 	* Mezzanine 
+ 	* -
+ Se imprime informe 
+ Se imprime informe 
+ Se imprime informe 
+
+****************************************************************************************************
