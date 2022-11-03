@@ -1,0 +1,24 @@
+Hoy es=> Jueves 3 / 112022-11-03 16:00:42.666650 => Se cierra aplicación pablo
+Hoy es=> Jueves 3 / 11Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+2022-11-03 16:01:43.671552 => Se cierra aplicación pablo
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+Hoy es=> Jueves 3 / 11
+2022-11-03 16:08:46.119135 => Se cierra aplicación pablo
+
+Hoy es=> Jueves 3 / 11
+2022-11-03 16:09:11.876273 => pablo Se Realiza Mantenimiento de: 
+ 	* Cámaras Termicas
+ Se imprime informe 
+
+****************************************************************************************************
+
+2022-11-03 16:09:11.876273 => Se cierra aplicación pablo
+
