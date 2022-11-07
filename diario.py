@@ -3,7 +3,6 @@
 # Descripcion: Aplicación para poder monitorear y visualizar las tareas diarias a realizar                                                                                                                                                                      *
 #               Consiste en un desarroyo que asiste a la visualización de tareas programadas y carga de tareas realizadas en el dia. Tambien permite que se mofiquen tareas anteriores pudiendo grabar las mismas desde la app.                                 *
 # #**************************************************************************************************************************************************************************************************************************************************************
-from ast import Str
 from calendar import weekday
 import cmd
 from distutils.command.clean import clean
@@ -31,11 +30,8 @@ from openpyxl.styles import PatternFill
 #****************************************************************************************************************************************************************************************************************************************************************
 new_user=os.environ['USERPROFILE']                                                                                                  # Identifico el "UserProfile" de la pc para poder encontrar las carpetas instaladas en el Setup.py                          *
 user=new_user.replace("\\","/")                                                                                                     # Reemplazo "\" por "/" dado a que no reconocen la ruta en Python                                                           *
-
-#path=open(new_user + '/Desktop/Codigo/Paths.txt','r')                                                                              # Busco el archivo donde se encuentran las rutas preestablecidas para encontrar los archivos. (Las cuales se pueden         *
-path=open(user+'/Desktop/Soft/Path.txt')                                                                              
+path=open(user+'/Desktop/Soft/Path.txt')                                                                                            # Busco el archivo donde se encuentran las rutas preestablecidas para encontrar los archivos. (Las cuales se pueden         *
 lineas=path.readlines()                                                                                                             # modificar en caso que asi se quiera)                                                                                      *
-
 log=open(user  + (str(lineas[1])[:-1]),mode="a")                                                                                    # Ruta de Archivo donde se encuentran los Logs de eventos                                                                   *
 #****************************************************************************************************************************************************************************************************************************************************************
 dia=        datetime.datetime.today().day                                                                                           # Variable de Dia                                                                                                           *
