@@ -31,3 +31,8 @@
 |que tengo dividido las tareas que se repiten todas las semana a las que van variando de acuerdo al mes.                                                                                    | 
 | Sigo trabajando con las tareas que se cargan en forma manual a la Tabla "Tareas". Aun no puedo hacer que se guarden correctamente lo cargado en la aplicacion, pero ya puedo navegar las  |
 |precargadas. Esto pensando en ponerles un "ID" para poder hacer un seguimiento mas controlado                                                                                              |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|Modificaciones:    07/11/2022                                                                                                                                                              |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Intento Empezar a codificar seguin el Solid Code. No estoy teniendo buenos resultados en si con las subtareas. Pude crear una seccion que solo es para las variables, y para abrir el     |
+|archivo de ayuda. Sigo con fallas en el Destroy.py ya que cuando quiero cerrar una ventana, me abre el resto de las app en blanco, tengo que desfrar como encriptar esta falla             |

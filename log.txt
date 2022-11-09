@@ -22,3 +22,32 @@ Hoy es=> Jueves 3 / 11
 
 2022-11-03 16:09:11.876273 => Se cierra aplicación pablo
 
+2022-11-07 12:12:20.651883 => Se cierra aplicación pablo
+2022-11-07 12:15:36.458278 => Se cierra aplicación pablo
+2022-11-07 12:15:44.618992 => Se cierra aplicación pablo
+2022-11-07 12:16:14.384182 => Se cierra aplicación pablo
+2022-11-07 12:17:36.625926 => Se cierra aplicación pablo
+2022-11-07 14:11:58.032418 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 
+2022-11-07 14:12:01.935925 => Se cierra aplicación pablo
+2022-11-07 14:23:20.971252 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 
+2022-11-07 14:41:58.790316 => Se cierra aplicación pablo
+2022-11-07 14:46:09.633256 => Se cierra aplicación pablo
+2022-11-07 14:46:44.940935 => Se cierra aplicación pablo
+2022-11-07 14:47:15.876871 => Se cierra aplicación pablo
+2022-11-07 14:55:03.439230 => Se cierra aplicación pablo
+2022-11-07 15:01:17.386154 => Se cierra aplicación pablo
+2022-11-07 15:01:58.829608 => Se cierra aplicación pablo
+2022-11-07 15:09:47.019790 => Se cierra aplicación pablo
+2022-11-07 15:13:02.993131 => Se cierra aplicación pablo
+2022-11-07 15:14:58.128773 => Se cierra aplicación pablo
+2022-11-07 15:15:11.134983 => Se cierra aplicación pablo
+2022-11-07 15:21:21.381134 => Se cierra aplicación pablo
+2022-11-07 15:23:36.999402 => Se cierra aplicación pablo
+2022-11-07 15:24:05.801838 => Se cierra aplicación pablo
+2022-11-07 15:25:24.124403 => Se cierra aplicación pablo
+2022-11-07 15:25:45.807909 => Se cierra aplicación pablo
+2022-11-07 15:39:34.379146 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 
+2022-11-07 15:40:24.094769 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 
+2022-11-07 16:16:25.167391 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 
+2022-11-07 16:16:44.879413 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 
+2022-11-07 16:24:35.633688 => Inicio => pablo Selecciona Buscador. Se ejecuta scrip y se cierra Inicio 

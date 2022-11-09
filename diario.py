@@ -359,8 +359,7 @@ else:
 #           Boton para abrir el .txt donde detalla asistencias y detalles de la aplicación. Se define los detalles de la aplicación y funcion de la misma                                                                                                       *
 #****************************************************************************************************************************************************************************************************************************************************************
 def Ayuda():
-    system('start %userprofile%\Desktop\Soft\Help.txt')                                                                             # Abro por Sistema el Txt de ayuda del programa                                                                             *
-    return
+    import Ayuda
 #****************************************************************************************************************************************************************************************************************************************************************                        
 #   Detalle:                                                                                                                                                                                                                                                    *
 #           Esta parte del codigo se utiliza para realizar cambios de las tareas de acuerdo al dia. Modificamos el dia aumentando uno y asi podemos navegar para poder analizar las tareas programadas                                                          *
