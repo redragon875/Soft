@@ -10,7 +10,8 @@ Hini=       datetime.datetime.now()                                             
 Mensaje=    str()                                                                                                                   # Variable que utilizo para confeccionar los mensajes a mostrar en la aplicación                                            *
 Dato=       str()                                                                                                                   # Variable para comparar el valor de planilla contra el ingresado en el buscador                                            *
 Registro=   str()
-Fondo='#5B5B5B'                                                                                                                     # Color Amarillo de Prosegur'#FFCC01'
+Fondo='#5B5B5B'                                                                                                                     # Color Amarillo de Prosegur'#FFCC01'                                                                                   
+Fuente=("Arial",12)                                                                                                                 # Estilo de Fuente a utilizar                                                                                               *
 #****************************************************************************************************************************************************************************************************************************************************************
 new_user=os.environ['USERPROFILE']                                                                                                  # Identifico el "UserProfile" de la pc para poder encontrar las carpetas instaladas en el Setup.py                          *
 user=new_user.replace("\\","/")                                                                                                     # Reemplazo "\" por "/" dado a que no reconocen la ruta en Python                                                           *
@@ -19,6 +20,9 @@ path=open(user+'/Desktop/Soft/Path.txt')                                        
 lineas=path.readlines()                                                                                                             # modificar en caso que asi se quiera)                                                                                      *
 
 log=open(user  + (str(lineas[1])[:-1]),mode="a")                                                                                    # Ruta de Archivo donde se encuentran los Logs de eventos                                                                   *
+#****************************************************************************************************************************************************************************************************************************************************************    
+#ws= str()
+reg_ws=str()
 #****************************************************************************************************************************************************************************************************************************************************************
 # Variables utilizadas en el buscador                                                                                                                                                                                                                           *
 #****************************************************************************************************************************************************************************************************************************************************************
@@ -41,3 +45,15 @@ S_t1="CCTV"                                                                     
 S_t2="CA"                                                                                                                           # Tabla "CA"                                                                                                                *
 S_t3="Lectoras"                                                                                                                     # Tabla "Lectoras"                                                                                                          *
 S_t4="Avigilon"                                                                                                                     # Tabla "Avigilon"                                                                                                          *
+#****************************************************************************************************************************************************************************************************************************************************************
+# Variables utilizadas en el Modificador                                                                                                                                                                                                                           *
+#****************************************************************************************************************************************************************************************************************************************************************
+Servidor=str()
+Comparador=int()                                                                                                                           # Variable de uso general para pruebas                                                                                      *
+Dato=str()                                                                                                                          # Variable para poder obtener datos y poder comparar                                                                        *
+Num=int(1)                                                                                                                          # Variable para poder navegar por el listado Excel                                                                          *
+Limite=3000                                                                                                                         # Limite de renglones para buscar                                                                                           *
+Posicion=150
+Ancho=37
+Bh=20
+print (Wtree)

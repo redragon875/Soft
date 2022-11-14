@@ -1,7 +1,11 @@
 C:/Users/pablo/Desktop/Soft/Base.xlsx
 /Desktop/Soft/log.txt
-\Desktop\Soft\Nuclear.ico
+/Desktop/Soft/Nuclear.ico
 /Desktop/Soft/lupa.png
 /Desktop/Soft/Toyota_2.png
 /Desktop/Soft/diario.txt
 /Desktop/Soft/flecha.png
+/Desktop/Soft/CCTV.png
+/Desktop/Soft/electrician-tools.png
+/Desktop/Soft/HID.png
+/Desktop/Soft/CCTV_2.png
