@@ -51,7 +51,7 @@ mybus.geometry("{}x{}+{}+{}".format(W,H, X_cordinate, Y_cordinate))
 #****************************************************************************************************************************************************************************************************************************************************************
 Myimg=      PhotoImage(file=(user   + (str(lineas[3]))[:-1]))                                                                       # Variable para imagen del Boton de Busqueda. Se define la ruta en el programa.                                             *
 Mylogo=     PhotoImage(file=(user   + (str(lineas[4]))[:-1]))                                                                       # Variable para imagen del Logo del Icono a usar                                                                            *
-lbl_lable=  tk.Label(mybus,image=Mylogo,border=0).place(x=-10,y=-10)                                                                   # Se define en Lable para poder utilizar "mylogo" como fondo de ventana.                                                    *
+lbl_lable=  Label(mybus,image=Mylogo,border=0).place(x=-10,y=-10)                                                                   # Se define en Lable para poder utilizar "mylogo" como fondo de ventana.                                                    *
 # Definimos el cuadro de entrada de Texto para buscar Celda                                                                                                                                                                                                     *
 #****************************************************************************************************************************************************************************************************************************************************************
 Entrada=    ttk.Entry(mybus,font=("Arial",12),width=20)                                                                             # Defino el renglon de entrada de datos para comparar                                                                       *
@@ -76,7 +76,7 @@ t4_image=       PhotoImage(file=(user+ (str(lineas[10]))[:-1]))                 
 #****************************************************************************************************************************************************************************************************************************************************************
 def Open_Pyxl():                                                                                                                    # Se optimiza la seleccion de la WorkSheet en este sub codigo. Genero todo el proceso de configuración del mismo para poder *
                                                                                                                                     #optimizar el codigo y que no tenga que ejecutar varias veces el mismo codigo en distintas partes del mismo                 *
-    global ws,wbs,reg_ws                                                                                                            
+    global ws,wbs,reg_ws,Mylogo                                                                                                            
         
     wbs = Tree.item(Tree.focus(),option='text')                                                                                     # Defino wbs como el ITem seleccionado del Tree que armamos previamente.                                                    *
     ws=wb[wbs]                                                                                                                      # Defino ws para poder utilizar como Worksheet del Libro / planilla
@@ -155,7 +155,7 @@ def Siguiente():                                                                
 def Anterior():                                                                                                                     # Mostramos el valor anteroor al que tenemos en el buscador                                                                 *
     
     global num, dispositivo                                                                                                         # Tomo las Variables Globales y le permito el uso dentro del subprograma                                                    *
-    
+    Open_Pyxl()
     if num>0:                                                                                                                       # En caso de que el Num sea mayor a 0, reducimos el valor de la variable                                                    * 
         num-=1                                                                                                                      # Se reduce el valor de la variable                                                                                         *
         Imprimir()                                                                                                                  # Ejecutamos el Sub Imprimir                                                                                                *
@@ -168,13 +168,16 @@ def Buscar():                                                                   
     global dispositivo
     num=1                                                                                                                           # Configuro la variable en valor incial, para poder buscar desde el inicio del listado                                      *
     
-    Open_Pyxl
+    Open_Pyxl()
     current_item = Tree.focus()                                                                                                     # Configuro la variable con el Focus del Tree, para poder utilizarlo como indicador de Ws.                                  *
     wbs = Tree.item(current_item,option='text')                                                                                     # Selecciono el item "Current_item" y lo configuro como "Text" y lo paso a la variable para utilizar                        *
     
-    import Wbs  # Tomo el valor y cotejo que se selecciono en el Wtree para poder seleccionar el WorkSheet correspondiente para buscar      *                  
-    ws=wb[wbs]                                                                                                                      # Buscamos la WorkSheet correspondiente a lo selecionado                                                                    *
-   
+    if wbs =="":
+        messagebox.showerror(title="Error de Busqueda",message="Falta seleccionar dentro del arbol la subcategoria")                # Comparo el Valor obtenido de Wbs y en caso de estar vacio, Muestro este mensjae de error                              *
+    else:
+        wtree=wbs                                                                                                                   # Caso contrario, paso "wbs" a "wtree" que es un str para poder utilizarla en el programa.                              * 
+        ws=wb[wbs]                                                                                                                  # Buscamos la WorkSheet correspondiente a lo selecionado                                                                    *
+
     dato=Entrada.get().upper()                                                                                                      # Tomo lo escrito en el Entry y lo paso a Upper para tener un control del ingreso                                           *
     dispositivo=ws.cell(row=num,column=4)                                                                                           # Tomo lo escrito dentro del Cell del listado segun el Num que es = al renglon del listado                                  *
     
@@ -198,35 +201,38 @@ def Imprimir():                                                                 
     
     global dato,num,dispositivo                                                                                                     # Importamos las variables a utilizar / procesar                                                                            *
     
+    print("valor de WS "+str(ws))
+    
     dato=Entrada.get().upper()                                                                                                      # Agarro el texto ingresado y lo convierto en Mayusculas, solo para poder tener todo standarizado                           *
     dispositivo=ws.cell(row=num,column=4)                                                                                           # Tomo el valor de la celda para comparar                                                                                   *
     
     
     Mensaje=(str(Hini)+" => "+user[9:30] + " esta buscado el dato " +dato+" que esta es el registro numero => "+str(num)+"worksheet => "+wbs+"\n")                                                                                                              
                                                                                                                                     # Escribimos Horario, usuario, dato, renglon y tabla buscado para poder tener registro de lo realizado.                     *
-    import WLog  # Configuramos el Mensjae para poder poner en el Log y tener registro de lo realizado                                       *
+    #import WLog                                                                                                                    # Configuramos el Mensjae para poder poner en el Log y tener registro de lo realizado                                       *
     
-    dispositivo=        ws.cell(row=num,column=4)                                                                                   # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                 *
-    nombre=             ws.cell(row=num,column=4)                                                                                   # Nombre del dispositivo en el listado
-    equipo=             ws.cell(row=num,column=2)                                                                                   #   
-    ubicacion=          ws.cell(row=num,column=3)
-    marca=              ws.cell(row=num,column=6)
-    modelo=             ws.cell(row=num,column=7)
-    serial=             ws.cell(row=num,column=8)
-    ip=                 ws.cell(row=num,column=11)
-    usuario=            ws.cell(row=num,column=12)
-    password=           ws.cell(row=num,column=13)
-    server=             ws.cell(row=num,column=14)    
-           
-    Res_nombre.set      (nombre.value)
-    Res_equipo.set      (equipo.value)
-    Res_ubi.set         (str(ubicacion.value))
-    Res_marca.set       (str(marca.value) +"   =>  "+ str(modelo.value)) 
-    Res_ip.set          (ip.value)
-    Res_serial.set      (serial.value)
-    Res_usuario.set     (usuario.value)
-    Res_password.set    (password.value)
-    Res_server.set      (server.value)
+    #dispositivo=        ws.cell(row=num,column=4)                                                                                  # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                 *
+    #nombre=             ws.cell(row=num,column=4)                                                                                  # Nombre del dispositivo en el listado                                                                                      *
+    #equipo=             ws.cell(row=num,column=2)                                                                                  # Tipo de Equipo                                                                                                            *  
+    #ubicacion=          ws.cell(row=num,column=3)                                                                                  # Ubicación del Equipo                                                                                                      *
+    #marca=              ws.cell(row=num,column=6)                                                                                  # Marca del Equipo                                                                                                          *
+    #modelo=             ws.cell(row=num,column=7)                                                                                  # Modelo del Equipo                                                                                                         *
+    #serial=             ws.cell(row=num,column=8)                                                                                  # N° de serie                                                                                                               *
+    #ip=                 ws.cell(row=num,column=11)                                                                                 # N° de IP                                                                                                                  *
+    #usuario=            ws.cell(row=num,column=12)                                                                                 # Usuario para ingresar a la configuración                                                                                  *
+    #password=           ws.cell(row=num,column=13)                                                                                 # Password de ingreso a equipo                                                                                              *
+    #server=             ws.cell(row=num,column=14)                                                                                 # Servidor a la cual esta conectado                                                                                         *
+
+                                                                                                                                    # Seteamos los valores de las respuestas, en este caso ruteamos directamente la ubicacion, en lugar de cargalo en una var   *
+    Res_nombre.set      (ws.cell(row=num,column=4).value)                                                                           # y luego setear el StringVar correspondiente. En esta caso es el Nombre                                                    *
+    Res_equipo.set      (ws.cell(row=num,column=2).value)                                                                           # Tipo de Equipo                                                                                                            *
+    Res_ubi.set         (str(ws.cell(row=num,column=3).value))                                                                      # Ubicación del Equipo                                                                                                      *
+    Res_marca.set       (str(ws.cell(row=num,column=6).value) +"   =>  "+ str(ws.cell(row=num,column=7).value))                     # Marca del Equipo y modelo del equipo concatenado                                                                          *
+    Res_ip.set          (ws.cell(row=num,column=11).value)                                                                          # N° de IP                                                                                                                  *
+    Res_serial.set      (ws.cell(row=num,column=8).value)                                                                           # N° de serie                                                                                                               *
+    Res_usuario.set     (ws.cell(row=num,column=12).value)                                                                          # Usuario para ingresar a la configuración                                                                                  *
+    Res_password.set    (ws.cell(row=num,column=13).value)                                                                          # Password de ingreso a equipo                                                                                              *
+    Res_server.set      (ws.cell(row=num,column=14).value)                                                                          # Servidor a la cual esta conectado                                                                                         *
 #****************************************************************************************************************************************************************************************************************************************************************    
 def Modifi():
     
@@ -237,7 +243,7 @@ def Modifi():
         current_item = Tree.focus()    
         wbs = Tree.item(current_item,option='text') 
         wtree=str(wbs)
-        import Destroy
+        #import Destroy
         import Modificar
         
     else:

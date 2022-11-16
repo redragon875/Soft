@@ -36,3 +36,10 @@
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Intento Empezar a codificar seguin el Solid Code. No estoy teniendo buenos resultados en si con las subtareas. Pude crear una seccion que solo es para las variables, y para abrir el     |
 |archivo de ayuda. Sigo con fallas en el Destroy.py ya que cuando quiero cerrar una ventana, me abre el resto de las app en blanco, tengo que desfrar como encriptar esta falla             |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|15/11/2022                                                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Despues de varios dias, dejo la idea de armar todo modular dado a que me esta generando mas Fallas. Este paso lo voy a dejar para cuando haga otra version mejorada. Por ahora funciona el|
+|buscador pero no pueso pasar al modificador de valores. segun el visual, me tira falla de que no encuentra la imagen del fondo de la ventana. Ya me paso en el Buscador, pero no recuenrdo |
+|como lo solucuione. Tengo que seguir trabajando en esta parte, y comentar todo el soft, de esta forma ya lo pondria en operativo y seguiria debuggeando para una reversion.                |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|

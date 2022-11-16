@@ -61,8 +61,8 @@ x_cordinate =   int((screen_width/2) - (W/2))
 y_cordinate =   int((screen_height/2) - (H/2)-25)
 Mymod.geometry("{}x{}+{}+{}".format(W,H, x_cordinate, y_cordinate))
 #****************************************************************************************************************************************************************************************************************************************************************
-Mylogo=tk.PhotoImage(file=(user  + (str(lineas[4]))[:-1]))                                                                             # Variable para imagen del Logo del Icono a usar                                                                            *
-lbl_lable=ttk.Label(Mymod,image=Mylogo,border=0).place(x=-10,y=-10)                                                                 # Se define en Lable para poder utilizar "mylogo" como fondo de ventana.                                                    *
+MyFondo=tk.PhotoImage(file=(user  + (str(lineas[4]))[:-1]))                                                                             # Variable para imagen del Logo del Icono a usar                                                                            *
+lbl_lable=ttk.Label(Mymod,image="C:"+user+"/Desktop/Soft/Toyota_2.png",border=0).place(x=-10,y=-10)                                                                 # Se define en Lable para poder utilizar "mylogo" como fondo de ventana.                                                    *
 
 #****************************************************************************************************************************************************************************************************************************************************************
 # Definimos Variables para respuestas                                                                                                                                                                                                                           *
@@ -145,12 +145,12 @@ E_mod_Server=       ttk.Entry(Mymod,textvariable=res_server     ,font=Fuente,bac
 #****************************************************************************************************************************************************************************************************************************************************************                        
 def Siguiente():
     
-    global num,dispositivo,wtree                                                                                                    # Tomo las Variables Globales y le permito el uso dentro del subprograma                                                    *
+    global num,dispositivo,Wtree                                                                                                    # Tomo las Variables Globales y le permito el uso dentro del subprograma                                                    *
     
     num+=1                                                                                                                          # Aumento la variable "num"                                                                                                 *
 
     wb=openpyxl.load_workbook(str(lineas[0])[:-1])                                                                                  # Genero el vinculo y abro el Excel que esta definido dentro del String dentro del Path                                     *     
-    ws=wb[wtree]                                                                                                                    # Abro la Hoja (ws) CCTV para poder trabajar con esos datos
+    ws=wb[Wtree]                                                                                                                    # Abro la Hoja (ws) CCTV para poder trabajar con esos datos
     dispositivo=ws.cell(row=num,column=4)                                                                                           # Defino la variable para poder compara con la variable "Entrada" teniendo en cuenta los parametros "num" como renglones    *
                                                                                                                                     #y como columna una sola definitiva para poder buscar solamente por nombre de equipo                                        *   
    
@@ -167,7 +167,7 @@ def Anterior():
         num-=1
         Imprimir()
     else:
-        tk.messagebox.showerror(message="No se encuentra valor menor")    
+        messagebox.showerror(message="No se encuentra valor menor")    
         
 #****************************************************************************************************************************************************************************************************************************************************************
 def m_ubi():
@@ -184,7 +184,7 @@ def Modific():
     global dispositivo
         
     wb=openpyxl.load_workbook(str(lineas[0])[:-1])                                                                                  # Corresponde a la ruta en caso de tenerlo en la pc en forma local                                                          *
-    ws=wb[wtree]
+    ws=wb[Wtree]
     
     dispositivo=    ws.cell(row=num,column=4)
     nombre=         ws.cell(row=num,column=4)
@@ -214,12 +214,12 @@ def Modific():
 #****************************************************************************************************************************************************************************************************************************************************************        
 def Imprimir():    
     
-    global dato,dispositivo
-    from buscador import num,wtree
+    global dato,dispositivo, num, Wtree
+    #from buscador import
     
-    print (wtree)
+    print (Wtree)
     wb=openpyxl.load_workbook(str(lineas[0])[:-1])
-    ws=wb[wtree]
+    ws=wb[Wtree]
     
     Mensaje(str(Hini)+" => "+user[9:30] + " esta buscado el dato " +dato+" que esta es el registro numero => "+str(num)+"\n")
     import WLog 
@@ -255,16 +255,15 @@ def Conectar():
     server=ws.cell(row=num,column=14) 
     servidor='cmd /k "mstsc -v ' + server.value + ':4489'
     print(servidor)
-    Mymod.destroy()
+    Salir()
     os.system(servidor)
     
     return 
 #****************************************************************************************************************************************************************************************************************************************************************    
 def Salir():
     
-    log=open(user  + (str(lineas[1])[:-1]),mode="a")
-    log.write(str(Hini)+" => Se cierra aplicación "+user[9:]+"\n")
-    log.close()
+    Mensaje(str(Hini)+" => Se cierra aplicación "+user[9:]+"\n")
+    import WLog
     Mymod.destroy()
     import buscador
 #****************************************************************************************************************************************************************************************************************************************************************    
@@ -278,9 +277,6 @@ boton=      tk.Button(Mymod,text="Modificar",activebackground="#ABABAB",backgrou
 salir=      tk.Button(Mymod,text="Salir"    ,activebackground="#BABABA",background="#838383",command=Salir,justify='center',width=23)       .place(x=790,y=altura+50)                                                       # Creo un Boton para cerrar la aplicación                                       *
 bsiguiente= tk.Button(Mymod,text="Siguiente",activebackground="#ABABAB",background="#838383",command=Siguiente,width=11,state='active')     .place(x=780,y=altura)
 banterios=  tk.Button(Mymod,text="Previo"   ,activebackground="#ABABAB",background="#838383",command=Anterior,width=11,state='active')      .place(x=880,y=altura)
-#bmodificar=tk.Button(myapp,text="Modificar",activebackground="#ABABAB",background="#838383",command=Modificar,width=25,state='active').place(x=780,y=180)
-#bhelp=tk.Button(myapp,text="Ayuda",background="#838383",command=Ayuda,width=5,).place(x=15,y=650)                                                                               # Creo el Boton de "Ayuda" para mostrar el Txt correspondiente                  *
-#bconectar=tk.Button(myapp,text="Conectar",activebackground="#ABABAB",background="#838383",command=Conectar,width=25,state='active').place(x=780,y=500)
 #****************************************************************************************************************************************************************************************************************************************************************                     
 imagen=     PhotoImage(file=(user+"/Desktop/Soft/flecha.png"))
 #****************************************************************************************************************************************************************************************************************************************************************
