@@ -9,3 +9,4 @@ C:/Users/pablo/Desktop/Soft/Base.xlsx
 /Desktop/Soft/electrician-tools.png
 /Desktop/Soft/HID.png
 /Desktop/Soft/CCTV_2.png
+/Desktop/Soft/Toyota_3.png

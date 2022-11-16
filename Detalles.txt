@@ -43,3 +43,7 @@
 |buscador pero no pueso pasar al modificador de valores. segun el visual, me tira falla de que no encuentra la imagen del fondo de la ventana. Ya me paso en el Buscador, pero no recuenrdo |
 |como lo solucuione. Tengo que seguir trabajando en esta parte, y comentar todo el soft, de esta forma ya lo pondria en operativo y seguiria debuggeando para una reversion.                |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+!16/11/2022                                                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Se corrige bug de la apertura de la ventana del Modicador que no abria con la imagen de fondo. La falla se soluciono ejecuntando el cierre de la app Buscador, para que no se pisen las   |
+|imagenes de fondo.

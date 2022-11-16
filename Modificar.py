@@ -61,8 +61,8 @@ x_cordinate =   int((screen_width/2) - (W/2))
 y_cordinate =   int((screen_height/2) - (H/2)-25)
 Mymod.geometry("{}x{}+{}+{}".format(W,H, x_cordinate, y_cordinate))
 #****************************************************************************************************************************************************************************************************************************************************************
-MyFondo=tk.PhotoImage(file=(user  + (str(lineas[4]))[:-1]))                                                                             # Variable para imagen del Logo del Icono a usar                                                                            *
-lbl_lable=ttk.Label(Mymod,image="C:"+user+"/Desktop/Soft/Toyota_2.png",border=0).place(x=-10,y=-10)                                                                 # Se define en Lable para poder utilizar "mylogo" como fondo de ventana.                                                    *
+MyFondo=    PhotoImage(file=(user   + (str(lineas[4]))[:-1]))                                                                     # Variable para imagen del Logo del Icono a usar                                                                            *
+lbl_lable=  ttk.Label(Mymod,image=MyFondo,border=0).place(x=-10,y=-10)                                                            # Se define en Lable para poder utilizar "mylogo" como fondo de ventana.                                                    *
 
 #****************************************************************************************************************************************************************************************************************************************************************
 # Definimos Variables para respuestas                                                                                                                                                                                                                           *
@@ -214,14 +214,15 @@ def Modific():
 #****************************************************************************************************************************************************************************************************************************************************************        
 def Imprimir():    
     
-    global dato,dispositivo, num, Wtree
+    global Dato,dispositivo, num, Wtree
     #from buscador import
     
+    #dWtree="CCTV"
     print (Wtree)
     wb=openpyxl.load_workbook(str(lineas[0])[:-1])
     ws=wb[Wtree]
     
-    Mensaje(str(Hini)+" => "+user[9:30] + " esta buscado el dato " +dato+" que esta es el registro numero => "+str(num)+"\n")
+    Mensaje(str(Hini)+" => "+user[9:30] + " esta buscado el dato " +Dato+" que esta es el registro numero => "+str(num)+"\n")
     import WLog 
     
     dispositivo=    ws.cell(row=num,column=4)

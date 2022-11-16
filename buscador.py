@@ -19,8 +19,8 @@ from sys import *
 from tkinter import *
 from tkinter import (Entry, Grid, Image, StringVar, Text, Variable,commondialog, font, messagebox, scrolledtext,simpledialog, tix, ttk)
 from tkinter.constants import *
-from tkinter.tix import (STATUS, ButtonBox, ComboBox, LabelEntry, LabelFrame,Meter, PhotoImage)
-from tkinter.ttk import (Entry, Progressbar, Sizegrip, Spinbox, Style,Treeview, setup_master)
+from tkinter.tix import STATUS, ButtonBox, ComboBox, LabelEntry, LabelFrame,Meter, PhotoImage
+from tkinter.ttk import Entry, Progressbar, Sizegrip, Spinbox, Style,Treeview, setup_master
 from turtle import color, delay, title, width
 #****************************************************************************************************************************************************************************************************************************************************************
 import openpyxl
@@ -234,52 +234,49 @@ def Imprimir():                                                                 
     Res_password.set    (ws.cell(row=num,column=13).value)                                                                          # Password de ingreso a equipo                                                                                              *
     Res_server.set      (ws.cell(row=num,column=14).value)                                                                          # Servidor a la cual esta conectado                                                                                         *
 #****************************************************************************************************************************************************************************************************************************************************************    
-def Modifi():
+def Modifi():                                                                                                                       # Definimos la funcion de Modificar. para modificar los valores seleccionados                                               *
     
-    global wtree
+    global wtree                                                                                                                    # Definimos las variables a utilizar                                                                                        *
 
-    qst=messagebox.askokcancel(title="Modificar Parametros",message="Esta seguro que decea Modificar los Parametros???")
-    if qst==True:
-        current_item = Tree.focus()    
-        wbs = Tree.item(current_item,option='text') 
-        wtree=str(wbs)
-        #import Destroy
-        import Modificar
+    qst=messagebox.askokcancel(title="Modificar Parametros",message="Esta seguro que decea Modificar los Parametros???")            # Definimos un Message Box modo Pregunta para validar o no                                                                  *
+    if qst==True:                                                                                                                   # En caso de que sea validado se ejecuta lo siguiente                                                                       *
+        current_item = Tree.focus()                                                                                                 # Seleccionamos el valor del Arbol de Categorias para poder seleccionar los Workshets                                       *
+        wbs = Tree.item(current_item,option='text')                                                                                 # Pasamos lo seleccionado del arbol a la variable "WBS" y de esta forma se utiliza como WorkSheet                           *
+        wtree=str(wbs)                                                                                                              # Copio la variable en Wtree para poder utilizarlo en Modificar                                                             *   
+        mybus.destroy()                                                                                                             # Cierro la aplicación Buscador                                                                                             *
+        import Modificar                                                                                                            # Importamos y ejecutamos el codigo Modificar                                                                               *
         
-    else:
-        Mensaje="Se cancelo modificación solicitada"
-        messagebox.showerror(title="Modificación",message=Mensaje)
+    else:                                                                                                                           # En caso contrario se ejecuta el mensaje de error                                                                          *
+        Mensaje="Se cancelo modificación solicitada"                                                                                # Se genera el mensaje por el error, y en este caso se generara el message box de error                                     *
+        messagebox.showerror(title="Modificación",message=Mensaje)                                                                  # Se muestra el mensaje de error juto con el mensaje generado anteriormente                                                 *
 #****************************************************************************************************************************************************************************************************************************************************************        
-def Conectar():
-
-    wb=openpyxl.load_workbook(str(lineas[0])[:-1])
-    ws=wb["CCTV"]
-    server=ws.cell(row=num,column=14) 
-    servidor='cmd /k "mstsc -v ' + server.value + ':4489'
-    
-    #import Destroy
-    Salir()
-    os.system(servidor)
+def Conectar():                                                                                                                     # Definimos el codigo para poder realizar conexiones remotas a los servidores de los equipos correspondientes. Esto se      *
+                                                                                                                                    #ejecuta por medio de CMD ejecutando un RDP o MSTSC directo a los servidores que se indican en la planilla                  *
+    ws=wb["CCTV"]                                                                                                                   # Seteamos la WorkSheet en "CCTV" para poder obtener el servidor a cual corresponde cada equipo                             *
+    server=ws.cell(row=num,column=14)                                                                                               # Configuro la variable Server con los valores de la planilla segun correponda.                                             * 
+    servidor='cmd /k "mstsc -v ' + server.value + ':4489'                                                                           # Definimos el Comando MSTSC / RDP utilizando la variable Servidor y los parametros necesarios para la coenxion.            *    
+    Salir()                                                                                                                         # Ejecutamos Salir() para cerrar la ventana de la aplicacion en ejecución                                                   *
+    os.system(servidor)                                                                                                             # Indicamos a la Consola que ejecute lo almacenado en la variable Servidor                                                  *
     
     return 
 #****************************************************************************************************************************************************************************************************************************************************************    
-def Salir():
+def Salir():                                                                                                                        # Definimos el procedimiento para Salir / Cerrar la aplicación                                                              *
     
-    Mensaje=(str(Hini)+" => Se cierra aplicación "+user[9:]+"\n")
-    import WLog
-    mybus.destroy()
+    Mensaje=(str(Hini)+" => Se cierra aplicación "+user[9:]+"\n")                                                                   # Definimos el Mensaje que vamos a ingresar en el Log de Registros                                                          *
+    import WLog                                                                                                                     # Ejecutamos WLog con la variable anterior                                                                                  *
+    mybus.destroy()                                                                                                                 # Cerramos la ventana de la aplicación                                                                                      *
     print("Se cierra Mybus")
     return
 #****************************************************************************************************************************************************************************************************************************************************************
 # Definimos los botoes a ver en la ventana inicial                                                                                                                                                                                                              *
 #****************************************************************************************************************************************************************************************************************************************************************
-boton=      tk.Button(mybus,text="Buscar",      activebackground="#ABCDEF",background="#838B8B",command=Buscar,width=180,image=Myimg).place(x=780,y=60)                               # Creo Boton "planilla" para procesar las plantillas Requeridas para informe.   *
-salir=      tk.Button(mybus,text="Salir",       activebackground="#BABABA",command=Salir,justify='center',width=23).place(x=790,y=650)                                                 # Creo un Boton para cerrar la aplicación                                       *
-bsiguiente= tk.Button(mybus,text="Siguiente",   activebackground="#ABABAB",background="#838383",command=Siguiente,width=11,state='active').place(x=780,y=150)
-banterios=  tk.Button(mybus,text="Previo",      activebackground="#ABABAB",background="#838383",command=Anterior,width=11,state='active').place(x=880,y=150)
-bmodificar= tk.Button(mybus,text="Modificar",   activebackground="#ABABAB",background="#838383",command=Modifi,width=25,state='active').place(x=780,y=180)
-bconectar=  tk.Button(mybus,text="Conectar",    activebackground="#ABABAB",background="#838383",command=Conectar,width=25,state='active').place(x=780,y=500)
-bhelp=      tk.Button(mybus,text="Ayuda",       background="#838383",command=Ayuda,width=5,).place(x=15,y=650)                                                                         # Creo el Boton de "Ayuda" para mostrar el Txt correspondiente                  *
+boton=      tk.Button(mybus,text="Buscar",      activebackground="#ABCDEF"  ,background="#838B8B"   ,command=Buscar      ,width=180 ,image=Myimg)       .place(x=780,y=60)      # Creo Boton "planilla" para procesar las plantillas Requeridas para informe.   *
+salir=      tk.Button(mybus,text="Salir",       activebackground="#BABABA"  ,background="#838383"   ,command=Salir       ,width=23  ,justify='center')  .place(x=790,y=650)     # Boton para cerrar la aplicación. Comando "Salir"                              *
+bsiguiente= tk.Button(mybus,text="Siguiente",   activebackground="#ABABAB"  ,background="#838383"   ,command=Siguiente   ,width=11  ,state='active')    .place(x=780,y=150)     # Boton para comando "Siguiente"                                                *
+banterios=  tk.Button(mybus,text="Previo",      activebackground="#ABABAB"  ,background="#838383"   ,command=Anterior    ,width=11  ,state='active')    .place(x=880,y=150)     # Boton para comando "Anterior"                                                 *
+bmodificar= tk.Button(mybus,text="Modificar",   activebackground="#ABABAB"  ,background="#838383"   ,command=Modifi      ,width=25  ,state='active')    .place(x=780,y=180)     # Boton para comando "Modifi"                                                   *
+bconectar=  tk.Button(mybus,text="Conectar",    activebackground="#ABABAB"  ,background="#838383"   ,command=Conectar    ,width=25  ,state='active')    .place(x=780,y=500)     # Boton para comando "Conectar"                                                 *
+bhelp=      tk.Button(mybus,text="Ayuda",       activebackground="#ABABAB"  ,background="#838383"   ,command=Ayuda       ,width=5   ,state='active')    .place(x=15,y=650)      # Creo el Boton de "Ayuda" para mostrar el Txt correspondiente                  *
 #****************************************************************************************************************************************************************************************************************************************************************                     
 #****************************************************************************************************************************************************************************************************************************************************************
 log.close()
