@@ -15,7 +15,7 @@ import openpyxl
 from openpyxl import Workbook,load_workbook
 from Variables import *
 #****************************************************************************************************************************************************************************************************************************************************************
-log=open(user  + (str(lineas[1])[:-1]),mode="a")                                                                                # Abrimos el Archivo .txt que utilizamos para registrar los logs. Este esta enrutado en el Path                             *
-log.write(Mensaje)
+log=open(user + (str(lineas[1])[:-1]),mode="a")                                                                                # Abrimos el Archivo .txt que utilizamos para registrar los logs. Este esta enrutado en el Path                             *
+log.write(str(Hini)+Mensaje)
 log.close()       
 #****************************************************************************************************************************************************************************************************************************************************************

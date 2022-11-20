@@ -1,6 +1,7 @@
 #****************************************************************************************************************************************************************************************************************************************************************
-# Nombre: Inicio.Py
-# Descripcion: Consta de un simple programita que realizara el inicio de la aplicación. Muestra botones para poder ejecutar el Script correspondiente al buscador o al diario del programa
+# Nombre: Inicio.Py                                                                                                                                                                                                                                             *
+# Descripcion:  Consta de un simple programita que realizara el inicio de la aplicación. Muestra botones para poder ejecutar el Script correspondiente al buscador o al diario del programa. Presenta el Nombre del usuario de Windows utilziando y muestra una *
+#               barra de progreso que se utiliza como ejemplar para mostrar una carga de datos.                                                                                                                                                                 *
 #****************************************************************************************************************************************************************************************************************************************************************
 import os as os
 import sys as sys
@@ -19,8 +20,6 @@ import openpyxl
 from openpyxl import Workbook,load_workbook
 from Variables import *
 #****************************************************************************************************************************************************************************************************************************************************************
-#****************************************************************************************************************************************************************************************************************************************************************
-
 #****************************************************************************************************************************************************************************************************************************************************************
 #                                                                                                               Declaración de Variables                                                                                                                        *
 #****************************************************************************************************************************************************************************************************************************************************************
@@ -52,7 +51,7 @@ txt.place(x=550 ,y=320 )                                                        
 #****************************************************************************************************************************************************************************************************************************************************************
 myimg       =PhotoImage     (file=(user + "/Desktop/Soft/Toyota-Logo.png"))                                                         # Seleccionamos la imagen a mostrar en el incio del programa. Esta imagen puede ser modificada solo requiero reemplazar ruta*
 lbl_lable   =ttk.Label      (myapp,image=myimg,border=0,background=Fondo).place(x=10,y=10)                                          # Configuramos la posición de la imagen pero definimos como el "Label"                                                      *
-usr_lbl     =ttk.Label      (myapp,justify='left',text="Bienvenido "+user,font=("Old English Text MT",25),background=Fondo).place(x=10, y=200)
+usr_lbl     =ttk.Label      (myapp,justify='left',text="Bienvenido "+new_user[9:],font=("Old English Text MT",25),background=Fondo).place(x=10, y=200)
                                                                                                                                     # Definimos la tipografia, tamañno y posición del lable a utilizar                                                          *
 #****************************************************************************************************************************************************************************************************************************************************************
 #****************************************************************************************************************************************************************************************************************************************************************
@@ -103,21 +102,18 @@ def Inicio():                                                                   
     Barra()                                                                                                                         # pb=85                                                                                                                     *
     pb['value']+=10                                                                                                                 # pb=95                                                                                                                     *
     Barra()                                                                                                                         # pb=100                                                                                                                    *
-    return                                                                                                                                                                                                                                                          
+    return                                                                                                                                                                                                                                                     #*
 #****************************************************************************************************************************************************************************************************************************************************************
 def close():
-    log=open(user  + (str(lineas[1])[:-1]),mode="a")
-    registro=(str(Hini)+" => Inicio => "+user[9:30] + " Selecciona " +str(dato)+". Se ejecuta scrip y se cierra Inicio \n")
-    print (registro)
-    log.write(registro)
-    log.close()
-#    myapp.destroy()
+    Mensaje=(" => Inicio => "+user[9:30] + " Selecciona " +str(dato)+". Se ejecuta scrip y se cierra Inicio \n")
+    import WLog
+    myapp.destroy()
 #****************************************************************************************************************************************************************************************************************************************************************
 #****************************************************************************************************************************************************************************************************************************************************************                     
 # Definimos botones para iniciar sub programas                                                                                                                                                                                                                  *
 #****************************************************************************************************************************************************************************************************************************************************************
-boton=  tk.Button(myapp,text="Buscador",activebackground="#ABCDEF",background="#838B8B",command=Buscar,width=25,state="active").place(x=400,y=60)   # Definimos el Boton para ejecutar el "Buscador.py"                                                         *
-diario= tk.Button(myapp,text="Diario",activebackground="#ABCDEF",background="#838B8B",command=Diario,width=25,state="active").place(x=400,y=90)     # Definimos el Boton para ejecutar el "diario.py"                                                           *
+boton=  tk.Button(myapp,text="Buscador" ,activebackground="#ABCDEF" ,background="#838B8B"   ,command=Buscar ,width=25   ,state="active")    .place(x=400,y=60)   # Definimos el Boton para ejecutar el "Buscador.py"                                            *
+diario= tk.Button(myapp,text="Diario"   ,activebackground="#ABCDEF" ,background="#838B8B"   ,command=Diario ,width=25   ,state="active")    .place(x=400,y=90)     # Definimos el Boton para ejecutar el "diario.py"                                            *
 #****************************************************************************************************************************************************************************************************************************************************************
 
 #****************************************************************************************************************************************************************************************************************************************************************

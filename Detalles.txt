@@ -46,4 +46,16 @@
 !16/11/2022                                                                                                                                                                                 |
 |-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | Se corrige bug de la apertura de la ventana del Modicador que no abria con la imagen de fondo. La falla se soluciono ejecuntando el cierre de la app Buscador, para que no se pisen las   |
-|imagenes de fondo.
+|imagenes de fondo.                                                                                                                                                                         |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|18/11/2022                                                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Configuramos los parametros de funcionamiento de Busqueda.py y ensima empezamos a corregir el funcionamiento del Modificar.py. Pendiente modoficar Diario.py                              |
+| Adicionalmente, realizamos pruebas de compilación de Inicio.py en pyinstaller como un solo archivo. Fallo funcionamiento por que no posee acceso al log de la carpeta, tenemos que        |
+|seguir realizando pruebas que recuerdo que ya nos paso algo asi y lo corregimos.                                                                                                           |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+|19/11/2022                                                                                                                                                                                 |
+|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| Corregimos el codigo de Inicio.py y se verifica correcto funcionamiento del mismo.                                                                                                        |
+| Tambien realizamos muchas modificaciones en Modificar.py, desde la toma de las variables correspondientes para mostrar en los Lbls, pasando tambien por la validacion de dato modificado  |
+|y cambio de color de letras solo como verificador del mismo. Pendiente terminar de configurar los otros lbls para que asi queden iguales                                                   |

@@ -1,6 +1,7 @@
 import datetime,time
 import os as os
 from tkinter import StringVar, Text, Variable
+#from buscador import ws
 #****************************************************************************************************************************************************************************************************************************************************************
 # Variables Genericas                                                                                                                                                                                                                                           *
 #****************************************************************************************************************************************************************************************************************************************************************
@@ -39,21 +40,33 @@ Ftree='#444444'
 var=int()                                                                                                                           # Variable de uso general para pruebas                                                                                      *
 #****************************************************************************************************************************************************************************************************************************************************************
 Renglon=30                                                                                                                          # Defino el valor a utilizar commo Renglones para poder las etiquetas sobre la ventana del soft                             *
-Wtree=str()                                                                                                                         # Utilizo este Str para poder mover el dato del Tree a "Modificar.py" y poder modificar dentro de las otras Tablas          
+Wtree=str()                                                                                                                         # Utilizo este Str para poder mover el dato del Tree a "Modificar.py" y poder modificar dentro de las otras Tablas          *
 #****************************************************************************************************************************************************************************************************************************************************************
 S_t1="CCTV"                                                                                                                         # Colocamos el Nombre de la Tabla de archivo para poder visualizar dentro del Tree. Esta Tabla se Llama "CCTV"              *
 S_t2="CA"                                                                                                                           # Tabla "CA"                                                                                                                *
 S_t3="Lectoras"                                                                                                                     # Tabla "Lectoras"                                                                                                          *
 S_t4="Avigilon"                                                                                                                     # Tabla "Avigilon"                                                                                                          *
+
+#dispositivo=        ws.cell(row=num,column=4)                                                                                  # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                     *    
+#nombre=             ws.cell(row=num,column=4)                                                                                  # Nombre del dispositivo en el listado                                                                                          *
+#equipo=             ws.cell(row=num,column=2)                                                                                  # Tipo de Equipo                                                                                                                *    
+#ubicacion=          ws.cell(row=num,column=3)                                                                                  # Ubicación del Equipo                                                                                                          *
+#marca=              ws.cell(row=num,column=6)                                                                                  # Marca del Equipo                                                                                                              *
+#modelo=             ws.cell(row=num,column=7)                                                                                  # Modelo del Equipo                                                                                                             *
+#serial=             ws.cell(row=num,column=8)                                                                                  # N° de serie                                                                                                                   *
+#ip=                 ws.cell(row=num,column=11)                                                                                 # N° de IP                                                                                                                      *
+#usuario=            ws.cell(row=num,column=12)                                                                                 # Usuario para ingresar a la configuración                                                                                      *
+#password=           ws.cell(row=num,column=13)                                                                                 # Password de ingreso a equipo                                                                                                  *
+#server=             ws.cell(row=num,column=14)                                                                                 # Servidor a la cual esta conectado                                                                                             *
 #****************************************************************************************************************************************************************************************************************************************************************
 # Variables utilizadas en el Modificador                                                                                                                                                                                                                           *
 #****************************************************************************************************************************************************************************************************************************************************************
 Servidor=str()
-Comparador=int()                                                                                                                           # Variable de uso general para pruebas                                                                                      *
-Dato=str()                                                                                                                          # Variable para poder obtener datos y poder comparar                                                                        *
-Num=int(1)                                                                                                                          # Variable para poder navegar por el listado Excel                                                                          *
-Limite=3000                                                                                                                         # Limite de renglones para buscar                                                                                           *
+Comparador=int()                                                                                                                # Variable de uso general para pruebas                                                                                          *
+Dato=str()                                                                                                                      # Variable para poder obtener datos y poder comparar                                                                            *
+Num=int(1)                                                                                                                      # Variable para poder navegar por el listado Excel                                                                              *
+Limite=3000                                                                                                                     # Limite de renglones para buscar                                                                                               *
 Posicion=150
-Ancho=37
+Ancho=int(37)
 Bh=20
 print (Wtree)
