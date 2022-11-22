@@ -167,46 +167,86 @@ def m_ubi():
     ws=wb["CCTV"]
 
 #****************************************************************************************************************************************************************************************************************************************************************
-def Modific():                                                                                                                                  # Parte del codigo donde se Modifica los valores del dispositivo y lo almacena en la planilla
+def Modific():                                                                                                                      # Parte del codigo donde se Modifica los valores del dispositivo y lo almacena en la planilla
     
     global num,limite
     global dispositivo
-    3
     
-    dispositivo=        ws.cell(row=num,column=4)                                                                                  # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                      *    
-    nombre=             ws.cell(row=num,column=4)                                                                                  # Nombre del dispositivo en el listado                                                                                           *
-    equipo=             ws.cell(row=num,column=2)                                                                                  # Tipo de Equipo                                                                                                                 *    
-    ubicacion=          ws.cell(row=num,column=3)                                                                                  # Ubicación del Equipo                                                                                                           *
-    marca=              ws.cell(row=num,column=6)                                                                                  # Marca del Equipo                                                                                                               *
-    modelo=             ws.cell(row=num,column=7)                                                                                  # Modelo del Equipo                                                                                                              *
-    serial=             ws.cell(row=num,column=8)                                                                                  # N° de serie                                                                                                                    *
-    ip=                 ws.cell(row=num,column=11)                                                                                 # N° de IP                                                                                                                       *
-    usuario=            ws.cell(row=num,column=12)                                                                                 # Usuario para ingresar a la configuración                                                                                       *
-    password=           ws.cell(row=num,column=13)                                                                                 # Password de ingreso a equipo                                                                                                   *
-    server=             ws.cell(row=num,column=14)                                                                                 # Servidor a la cual esta conectado                                                                                              *
+    
+    #dispositivo=        ws.cell(row=num,column=4)                                                                                  # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                      *    
+    #nombre=             ws.cell(row=num,column=4)                                                                                  # Nombre del dispositivo en el listado                                                                                           *
+    #equipo=             ws.cell(row=num,column=2)                                                                                  # Tipo de Equipo                                                                                                                 *    
+    #ubicacion=          ws.cell(row=num,column=3)                                                                                  # Ubicación del Equipo                                                                                                           *
+    #marca=              ws.cell(row=num,column=6)                                                                                  # Marca del Equipo                                                                                                               *
+    #modelo=             ws.cell(row=num,column=7)                                                                                  # Modelo del Equipo                                                                                                              *
+    #serial=             ws.cell(row=num,column=8)                                                                                  # N° de serie                                                                                                                    *
+    #ip=                 ws.cell(row=num,column=11)                                                                                 # N° de IP                                                                                                                       *
+    #usuario=            ws.cell(row=num,column=12)                                                                                 # Usuario para ingresar a la configuración                                                                                       *
+    #password=           ws.cell(row=num,column=13)                                                                                 # Password de ingreso a equipo                                                                                                   *
+    #server=             ws.cell(row=num,column=14)                                                                                 # Servidor a la cual esta conectado                                                                                              *
         
-
-    if res_nombre.get()!=mod_nombre.get():
+    
+    if res_nombre.get() !=mod_nombre.get():
         E_mod_nombre=    ttk.Entry(Mymod     ,textvariable=mod_nombre        ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*4)
-        res_nombre.set(mod_nombre.get().upper())
+        res_nombre.set  (mod_nombre.get().upper())
     else:
         E_mod_nombre=    ttk.Entry(Mymod     ,textvariable=mod_nombre        ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*4)
          
     
-    if res_equipo  .get()!=mod_equipo.get():
+    if res_equipo.get() !=mod_equipo.get():
         E_mod_equipo=    ttk.Entry(Mymod     ,textvariable=mod_equipo        ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*3)
-        res_equipo.set(mod_equipo.get().upper())
+        res_equipo.set  (mod_equipo.get().upper())
     else:
         E_mod_equipo=    ttk.Entry(Mymod     ,textvariable=mod_equipo        ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*3)
     
-    #if res_ubi     .get()!=
-    #marca.value=        res_marca   .get().upper()
-    #modelo.value=       res_modelo  .get().upper()
-    #ip.value=           res_ip      .get().upper()
-    #serial.value=       res_serial  .get().upper()
-    #usuario.value=      res_usuario .get().upper()
-    #password.value=     res_password.get().upper()
-    #server.value=       res_server  .get().upper()
+    if res_ubi.get()    != mod_ubi.get():
+        E_mod_ubicacion=    ttk.Entry(Mymod     ,textvariable=mod_ubi        ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*2)
+        res_ubi.set     (mod_ubi.get().upper())
+    else:
+        E_mod_ubicacion=    ttk.Entry(Mymod     ,textvariable=mod_ubi        ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*2)
+        
+    if res_marca.get()  !=mod_marca.get():
+        E_mod_marca=        ttk.Entry(Mymod     ,textvariable=mod_marca      ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*5)
+        res_marca.set   (mod_marca.get().upper())
+    else:
+        E_mod_marca=        ttk.Entry(Mymod     ,textvariable=mod_marca      ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*5)
+        
+    if res_modelo.get() !=mod_modelo.get():
+        E_mod_modelo=       ttk.Entry(Mymod     ,textvariable=mod_modelo     ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*6)
+        res_modelo.set  (mod_modelo.get().upper())
+    else:
+        E_mod_modelo=       ttk.Entry(Mymod     ,textvariable=mod_modelo     ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*6)
+    
+    if res_ip.get()     !=mod_ip.get():
+        E_mod_Ip=           ttk.Entry(Mymod     ,textvariable=mod_ip         ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*8)
+        res_ip.set      (mod_ip.get().upper())
+    else:
+        E_mod_Ip=           ttk.Entry(Mymod     ,textvariable=mod_ip         ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*8)
+        
+    if res_serial.get() !=mod_serial.get():
+        E_mod_Serial=       ttk.Entry(Mymod     ,textvariable=mod_serial     ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*7)
+        res_serial.set  (mod_serial.get().upper())
+    else:
+        E_mod_Serial=       ttk.Entry(Mymod     ,textvariable=mod_serial     ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*7)
+        
+    if res_usuario.get()    !=mod_usuario.get():
+        E_mod_Usuario=      ttk.Entry(Mymod     ,textvariable=mod_usuario    ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*9)
+        res_usuario.set (mod_usuario.get().upper())
+    else:
+        E_mod_Usuario=      ttk.Entry(Mymod     ,textvariable=mod_usuario    ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*9)
+        
+    if res_password.get()   !=mod_password.get():
+        E_mod_Password=     ttk.Entry(Mymod     ,textvariable=mod_password   ,font=Fuente      ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*10)
+        res_password.set(mod_password.get().upper())
+    else:
+        E_mod_Password=     ttk.Entry(Mymod     ,textvariable=mod_password   ,font=Fuente                               ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*10)
+        
+    if res_server.get() !=mod_server.get():
+        E_mod_Server=       ttk.Entry(Mymod     ,textvariable=mod_server     ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*11)
+        res_server.set  (mod_server.get().upper())
+    else:
+         E_mod_Server=       ttk.Entry(Mymod     ,textvariable=mod_server     ,font=Fuente                              ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*11)
+           
     
     wb.save(str(lineas[0])[:-1])
     
@@ -291,8 +331,8 @@ def Salir():
     
     Mensaje=(" => Se cierra aplicación "+user[9:]+"\n")
     import WLog
-    Mymod.destroy()
     import buscador
+    Mymod.destroy()
 #****************************************************************************************************************************************************************************************************************************************************************    
 def Destroy():
     Mymod.destroy()
@@ -300,10 +340,8 @@ def Destroy():
 # Definimos los botoes a ver en la ventana inicial                                                                                                                                                                                                              *
 #****************************************************************************************************************************************************************************************************************************************************************
 altura=400
-boton=      tk.Button(Mymod,text="Modificar"    ,activebackground="#ABABAB"     ,background="#838383"   ,command=Modific    ,width=11   ,state='active')       .place(x=880,y=altura)              # Creo Boton "planilla" para procesar las plantillas Requeridas para informe.   *
-salir=      tk.Button(Mymod,text="Salir"        ,activebackground="#BABABA"     ,background="#838383"   ,command=Salir      ,width=23   ,justify='center')       .place(x=790,y=altura+50)           # Creo un Boton para cerrar la aplicación                                       *
-#bsiguiente= tk.Button(Mymod,text="Siguiente",activebackground="#ABABAB",background="#838383",command=Siguiente,width=11,state='active')     .place(x=780,y=altura)
-#banterios=  tk.Button(Mymod,text="Previo"   ,activebackground="#ABABAB",background="#838383",command=Anterior,width=11,state='active')      .place(x=880,y=altura)
+boton=      tk.Button(Mymod,text="Modificar"    ,activebackground="#ABABAB"     ,background="#838383"   ,command=Modific    ,width=11   ,state='active')       .place(x=880,y=altura)               # Creo Boton "planilla" para procesar las plantillas Requeridas para informe.   *
+salir=      tk.Button(Mymod,text="Salir"        ,activebackground="#BABABA"     ,background="#838383"   ,command=Salir      ,width=23   ,justify='center')       .place(x=790,y=altura+50)          # Creo un Boton para cerrar la aplicación                                       *
 #****************************************************************************************************************************************************************************************************************************************************************                     
 imagen=     PhotoImage(file=(user+"/Desktop/Soft/flecha.png"))
 #****************************************************************************************************************************************************************************************************************************************************************
