@@ -159,33 +159,17 @@ def Anterior():
         Imprimir()
     else:
         messagebox.showerror(message="No se encuentra valor menor")    
-        
 #****************************************************************************************************************************************************************************************************************************************************************
 def m_ubi():
      
     wb=openpyxl.load_workbook(str(lineas[0])[:-1])                                                                                  # Corresponde a la ruta en caso de tenerlo en la pc en forma local                                                          *
     ws=wb["CCTV"]
-
 #****************************************************************************************************************************************************************************************************************************************************************
 def Modific():                                                                                                                      # Parte del codigo donde se Modifica los valores del dispositivo y lo almacena en la planilla
     
     global num,limite
     global dispositivo
-    
-    
-    #dispositivo=        ws.cell(row=num,column=4)                                                                                  # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                      *    
-    #nombre=             ws.cell(row=num,column=4)                                                                                  # Nombre del dispositivo en el listado                                                                                           *
-    #equipo=             ws.cell(row=num,column=2)                                                                                  # Tipo de Equipo                                                                                                                 *    
-    #ubicacion=          ws.cell(row=num,column=3)                                                                                  # Ubicación del Equipo                                                                                                           *
-    #marca=              ws.cell(row=num,column=6)                                                                                  # Marca del Equipo                                                                                                               *
-    #modelo=             ws.cell(row=num,column=7)                                                                                  # Modelo del Equipo                                                                                                              *
-    #serial=             ws.cell(row=num,column=8)                                                                                  # N° de serie                                                                                                                    *
-    #ip=                 ws.cell(row=num,column=11)                                                                                 # N° de IP                                                                                                                       *
-    #usuario=            ws.cell(row=num,column=12)                                                                                 # Usuario para ingresar a la configuración                                                                                       *
-    #password=           ws.cell(row=num,column=13)                                                                                 # Password de ingreso a equipo                                                                                                   *
-    #server=             ws.cell(row=num,column=14)                                                                                 # Servidor a la cual esta conectado                                                                                              *
-        
-    
+
     if res_nombre.get() !=mod_nombre.get():
         E_mod_nombre=    ttk.Entry(Mymod     ,textvariable=mod_nombre        ,font=Fuente       ,foreground="#FF0000"   ,width=Ancho    ,justify='center')   .place(x=Posicion+modifi,y=Renglon*4)
         res_nombre.set  (mod_nombre.get().upper())
@@ -261,19 +245,19 @@ def Imprimir():
     Mensaje=(" => "+user[9:30] + " esta buscado el dato " + Dato +" que esta es el registro numero => \n")
     import WLog 
         
-    dispositivo=        ws.cell(row=num,column=4)                                                                                  # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                      *    
-    nombre=             ws.cell(row=num,column=4)                                                                                  # Nombre del dispositivo en el listado                                                                                           *
-    equipo=             ws.cell(row=num,column=2)                                                                                  # Tipo de Equipo                                                                                                                 *    
-    ubicacion=          ws.cell(row=num,column=3)                                                                                  # Ubicación del Equipo                                                                                                           *
-    marca=              ws.cell(row=num,column=6)                                                                                  # Marca del Equipo                                                                                                               *
-    modelo=             ws.cell(row=num,column=7)                                                                                  # Modelo del Equipo                                                                                                              *
-    serial=             ws.cell(row=num,column=8)                                                                                  # N° de serie                                                                                                                    *
-    ip=                 ws.cell(row=num,column=11)                                                                                 # N° de IP                                                                                                                       *
-    usuario=            ws.cell(row=num,column=12)                                                                                 # Usuario para ingresar a la configuración                                                                                       *
-    password=           ws.cell(row=num,column=13)                                                                                 # Password de ingreso a equipo                                                                                                   *
-    server=             ws.cell(row=num,column=14)                                                                                 # Servidor a la cual esta conectado                                                                                              *
+    dispositivo=        ws.cell(row=num,column=4)                                                                                   # Cargamos los valores de la planilla en as variables segun su posicionamiento. Dispositivo                                 *
+    nombre=             ws.cell(row=num,column=4)                                                                                   # Nombre del dispositivo en el listado                                                                                      *
+    equipo=             ws.cell(row=num,column=2)                                                                                   # Tipo de Equipo                                                                                                            *
+    ubicacion=          ws.cell(row=num,column=3)                                                                                   # Ubicación del Equipo                                                                                                      *
+    marca=              ws.cell(row=num,column=6)                                                                                   # Marca del Equipo                                                                                                          *
+    modelo=             ws.cell(row=num,column=7)                                                                                   # Modelo del Equipo                                                                                                         *
+    serial=             ws.cell(row=num,column=8)                                                                                   # N° de serie                                                                                                               *
+    ip=                 ws.cell(row=num,column=11)                                                                                  # N° de IP                                                                                                                  *
+    usuario=            ws.cell(row=num,column=12)                                                                                  # Usuario para ingresar a la configuración                                                                                  *
+    password=           ws.cell(row=num,column=13)                                                                                  # Password de ingreso a equipo                                                                                              *
+    server=             ws.cell(row=num,column=14)                                                                                  # Servidor a la cual esta conectado                                                                                         *
     
-    res_nombre  .set    (nombre.value)    
+    res_nombre  .set    (nombre.value)                                                                                              # Seteamos el valor de la variable a los StringVar correspondientes para mostrar en la ventana                                  *
     res_equipo  .set    (equipo.value)
     res_ubi     .set    (str(ubicacion.value))
     res_marca   .set    (marca.value)
@@ -285,7 +269,7 @@ def Imprimir():
     res_server  .set    (server.value)
     
     
-    if mod_nombre.get()=="" :
+    if mod_nombre.get()=="" :                                                   
         mod_nombre      .set(res_nombre.get())
     
     if mod_equipo.get()=="":
@@ -315,24 +299,11 @@ def Imprimir():
     if mod_server.get()=="":
         mod_server      .set(res_server.get())
 #****************************************************************************************************************************************************************************************************************************************************************
-def Conectar():
-
-    wb=openpyxl.load_workbook(str(lineas[0])[:-1])
-    ws=wb["CCTV"]
-    server=ws.cell(row=num,column=14) 
-    servidor='cmd /k "mstsc -v ' + server.value + ':4489'
-    print(servidor)
-    Salir()
-    os.system(servidor)
-    
-    return 
-#****************************************************************************************************************************************************************************************************************************************************************    
-def Salir():
-    
-    Mensaje=(" => Se cierra aplicación "+user[9:]+"\n")
-    import WLog
-    import buscador
+def Salir():                                                                                                                        # Definimos el subcodigo para cerrar la ventana y registrar el Log                                                          *
+    Mensaje=(" => Se cierra aplicación "+user[9:]+"\n")                                                                             # Definimos el mensaje a registrar en el Log                                                                                *
+    import WLog                                                                                                                     # Ejecutamos el codigo Wlog                                                                                                 *
     Mymod.destroy()
+    import buscador                                                                                                                 # Volvemos a la ventana del Buscador                                                                                        *
 #****************************************************************************************************************************************************************************************************************************************************************    
 def Destroy():
     Mymod.destroy()
