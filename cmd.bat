@@ -7,3 +7,5 @@ pyinstaller -w --noconfir --icon=computer-programming.ico --onefile diario.py -n
 pyinstaller -w --noconfir --icon=electrician-tools.ico --onefile Modificar.py -n Modificar
 
 pyinstaller -w --noconfir Variable.py -n Varibles
+
+write "Finalizacion de Compilacion de Programas"

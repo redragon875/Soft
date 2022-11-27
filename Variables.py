@@ -70,3 +70,12 @@ Posicion=150
 Ancho=int(37)
 Bh=20
 print (Wtree)
+#****************************************************************************************************************************************************************************************************************************************************************
+# Variables utilizadas en el Diario                                                                                                                                                                                                                           *
+#****************************************************************************************************************************************************************************************************************************************************************
+var=        int()                                                                                                                   # Variable de uso general para pruebas                                                                                      *
+dato=       str()                                                                                                                   # Variable para poder obtener datos y poder comparar                                                                        *
+num=        int(1)                                                                                                                  # Variable para poder navegar por el listado Excel                                                                          *
+limite=     3000                                                                                                                    # Limite de renglones para buscar                                                                                           *
+Mensaje=    str()                                                                                                                   # Variable para poder mostrar mensaje                                                                                       *    
+Adia=        int(0)                                                                                                                  # Variable que utilizamos para modificar la Fecha de visualización en la aplicacion                                         *   
